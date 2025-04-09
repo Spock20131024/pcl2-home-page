@@ -1,0 +1,61 @@
+<!-- 顶端-->
+<!-- 图片部分-->
+<local:MyCard Title=" " Margin="0,0,0,15">
+    <StackPanel Margin="25,40,23,15">
+        <Image Height="150" HorizontalAlignment="Center" Source="http://5b0988e595225.cdn.sohucs.com/images/20171104/e39b3eed62bc4b489cb71d5b56bcce65.jpeg" ToolTip="看什么看快学习！" />
+        <TextBlock TextWrapping="Wrap" Margin="0,10,0,4" HorizontalAlignment="Center" Text="今天你学习了吗？" ToolTip="被你发现啦awa" />
+    </StackPanel>
+</local:MyCard>
+<!-- 网站部分-->
+<local:MyCard Title="网站" Margin="0,0,0,15">
+    <StackPanel Margin="25,40,23,15">
+        <!-- 第一行 -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight" Text="B 站" EventType="打开网页" EventData="https://www.bilibili.com/" ToolTip="我已经两分钟没逛B站了" />
+            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight" Text="中文WiKi" EventType="打开网页" EventData="https://wiki.biligame.com/mc/Minecraft_Wiki" ToolTip="B站镜像WiKi" />
+        </StackPanel>
+
+        <!-- 第二行 -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight" Text="Sakur Frp" EventType="打开网页" EventData="https://www.natfrp.com/user/sign" ToolTip="内网穿透" />
+            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight" Text="百度" EventType="打开网页" EventData="https://www.baidu.com/" ToolTip="有问题，找🡑🡑🡑"/>
+        </StackPanel>
+    </StackPanel>
+</local:MyCard>
+
+<!-- 下载部分-->
+<local:MyCard Title="下载" Margin="0,0,0,15" CanSwap="True" IsSwaped="True">
+    <StackPanel Margin="25,40,23,15">
+        <local:MyHint IsWarn="True" Text="链接必须为以http://或https://开头的网址，部分网址可能无法下载" />
+        <StackPanel Orientation="Horizontal" Height="50" Width="800">
+            <TextBlock Text="下载链接：" VerticalAlignment="Center" />
+            <local:MyTextBox Margin="3" Name="web" Height="30" Width="380" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <local:MyButton EventType="下载文件" EventData="{Binding ElementName=web,Path=Text}" Text="开始下载" Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight"/>
+        </StackPanel>
+    </StackPanel>
+</local:MyCard>
+
+<!-- 辅助部分-->
+<local:MyCard Title="其他" Margin="0,0,0,15" CanSwap="True" IsSwaped="True">
+    <StackPanel Margin="25,40,23,15">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        <local:MyHint IsWarn="False" Text="特别鸣谢Github用户Open-KFC(#6091)"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+            <local:MyListItem Margin="10,10,0,0"
+            Logo="pack://application:,,,/images/Blocks/RedstoneLampOn.png"
+            Title="刷新主页" Info="点一下？" EventType="刷新主页" Type="Clickable" />
+            <local:MyListItem Margin="10,10,0,0"
+            Logo="pack://application:,,,/images/Blocks/CommandBlock.png"
+            Title="清理垃圾" Info="PCL内置" EventType="清理垃圾" Type="Clickable" />            
+            <local:MyListItem Margin="10,10,0,0"
+            Logo="pack://application:,,,/images/Blocks/Grass.png"
+            Title="Hypixel" Info="MC 1.8" EventType="启动游戏" EventData="1.8|mc.hypixel.net" Type="Clickable" />
+            <local:MyListItem Margin="10,10,0,0"
+            Logo="pack://application:,,,/images/Blocks/GoldBlock.png"
+            Title=" LTW3  " Info="imyyds" EventType="启动游戏" EventData="1.18.2|mc.hexdragon.top" Type="Clickable" />
+        </StackPanel>
+    </StackPanel>
+</local:MyCard>
